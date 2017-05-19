@@ -1,0 +1,8 @@
+{% extends "library/base.html" %}
+{% block content %}
+    {% if book %}
+        <p>{{ book.name }}</p>
+    {% else %}
+        There is no book with that name!
+    {% endif %}
+{% endblock %}

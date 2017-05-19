@@ -1,0 +1,8 @@
+{% extends "library/base.html" %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ search_form.as_p }}
+        <input id="submit-btn" type="submit" value="Submit" placeholder="Search for a book">
+    </form>
+{% endblock %}

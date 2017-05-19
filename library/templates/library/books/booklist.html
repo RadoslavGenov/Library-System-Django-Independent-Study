@@ -1,0 +1,20 @@
+{% extends "library/base.html" %}
+{% block content %}
+    {% for book in books %}
+        <div class="listing">
+            <div class="image">
+                {% if book.picture %}
+                    <img src="{{ book.picture.url }}">
+                {% endif %}
+            </div>
+            <div class="details">
+                <div class="title"><a href={% url "library:detail_book" book.id %}>Name: {{ book.name }}</a></div>
+                <div class="author">Author: {{ book.author }}</div>
+                <div class="publisher">Publisher: {{ book.publisher }}</div>
+            </div>
+
+        </div>
+    {% endfor %}
+
+    {% include "pagination.html" with page=page_obj %}
+{% endblock %}

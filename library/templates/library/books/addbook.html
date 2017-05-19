@@ -1,0 +1,13 @@
+{% extends "library/base.html" %}
+{% block content %}
+    <div align="center">
+        <tr>
+            <form method="POST">
+                {% csrf_token %}
+                <h2>Book:</h2>
+                {{ form.as_p }}
+                <input type="submit" value="submit">
+            </form>
+        </tr>
+    </div>
+{% endblock %}
